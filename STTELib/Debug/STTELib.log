@@ -1,0 +1,24 @@
+﻿Compilazione avviata 14/03/2025 14:07:34.
+     1>Progetto "C:\Users\ING_TEST\Desktop\BancoOtticoWestar - DLL\1590SWP110 - Library Banco 2\STTELib\STTELib\STTELib.vcxproj" sul nodo 2 (destinazioni: build).
+     1>InitializeBuildStatus:
+         Creazione di "Debug\STTELib.unsuccessfulbuild". È stato specificato "AlwaysCreate".
+       ClCompile:
+         Tutti gli output sono aggiornati.
+         Tutti gli output sono aggiornati.
+       ResourceCompile:
+         Tutti gli output sono aggiornati.
+       ManifestResourceCompile:
+         Tutti gli output sono aggiornati.
+       Link:
+         Tutti gli output sono aggiornati.
+       Manifest:
+         Tutti gli output sono aggiornati.
+         Tutti gli output sono aggiornati.
+       FinalizeBuildStatus:
+         Eliminazione del file "Debug\STTELib.unsuccessfulbuild" in corso.
+         Aggiornamento timestamp di "Debug\STTELib.lastbuildstate".
+     1>Compilazione progetto "C:\Users\ING_TEST\Desktop\BancoOtticoWestar - DLL\1590SWP110 - Library Banco 2\STTELib\STTELib\STTELib.vcxproj" (destinazioni: build) completata.
+
+Compilazione completata.
+
+Tempo trascorso 00:00:00.06

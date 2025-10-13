@@ -1,0 +1,19 @@
+﻿  stdafx.cpp
+  CLibClass.cpp
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\LibGlobals.h(37,56): warning C4267: 'argomento': conversione da 'size_t' a 'DWORD'. Possibile perdita di dati.
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(40,28): warning C4305: '=': troncamento da '<unnamed-enum-TCP_PORT>' a 'WORD'
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(40,20): warning C4309: '=': troncamento di valore costante
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(215,11): warning C4244: 'inizializzazione': conversione da 'ULONGLONG' a 'double'. Possibile perdita di dati.
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(265,12): warning C4244: 'return': conversione da 'float' a 'int'. Possibile perdita di dati.
+  ServerTCPMng.cpp
+  Thrd.cpp
+  STTELib.cpp
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\LibGlobals.h(37,56): warning C4267: 'argomento': conversione da 'size_t' a 'DWORD'. Possibile perdita di dati.
+  STTELibDlg.cpp
+C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\LibGlobals.h(37,56): warning C4267: 'argomento': conversione da 'size_t' a 'DWORD'. Possibile perdita di dati.
+     Creazione della libreria C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\x64\Release\STTELib.lib e dell'oggetto C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\x64\Release\STTELib.exp
+  Generazione codice in corso...
+  Previous IPDB not found, fall back to full compilation.
+  All 345 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generazione codice terminata
+  STTELib.vcxproj -> C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\x64\Release\STTELib.dll

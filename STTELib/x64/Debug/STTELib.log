@@ -1,0 +1,8 @@
+﻿Compilazione avviata 29/08/2025 15:57:40.
+     1>Progetto "C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\STTELib.vcxproj" sul nodo 2 (destinazioni: rebuild).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Platforms\x64\Microsoft.Cpp.x64.Targets(507,5): error MSB8008: il set di strumenti della piattaforma specificata (v142) non è installato o non è valido. Accertarsi che sia selezionato un valore supportato per PlatformToolset.
+     1>Compilazione progetto "C:\Users\ING_TEST\Desktop\DHA5x5\Dha5x5_STTE_r777\1590SWP110 - Library Banco 2\STTELib\STTELib\STTELib.vcxproj" (destinazioni: rebuild) NON COMPLETATA.
+
+Compilazione NON RIUSCITA.
+
+Tempo trascorso 00:00:00.01
