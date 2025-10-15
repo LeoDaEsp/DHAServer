@@ -147,46 +147,48 @@ BOOL CSTTELibDlg::OnInitDialog()
 
 	res = CLibFunc::Cmd("CONNECT_COM", "On", addParams, bErrorOccurred, lErrorCode, NULL);
 
-	res = CLibFunc::Cmd("CONNECT_COM", "Off", addParams, bErrorOccurred, lErrorCode, NULL);
+	// res = CLibFunc::Cmd("CONNECT_COM", "Off", addParams, bErrorOccurred, lErrorCode, NULL);
 
 	res = CLibFunc::Cmd("CMD__REBOOT", "", addParams, bErrorOccurred, lErrorCode, NULL);
 
 	res = CLibFunc::Cmd("CONNECT_COM", "On", addParams, bErrorOccurred, lErrorCode, NULL);
 
+	
+
+	res = CLibFunc::Cmd("OPR_CRV_BRIGHTNESS_SET", "254", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("IDC_OPER_BRT_MODE", "On", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	
+	res = CLibFunc::Cmd("BRIG_DUTY", "50000", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("BRIG_CURRENT", "100", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("BRIG_POTENTIOMETER", "1", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("BRIG_DAY", "On", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("LCD_PATTERN", "Crosshair", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("LCD_PATTERN_COLOR_1", "W", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("LCD_PATTERN_COLOR_2", "B", addParams, bErrorOccurred, lErrorCode, NULL);
+
 	res = CLibFunc::Cmd("CONNECT_COM", "Off", addParams, bErrorOccurred, lErrorCode, NULL);
 
-	// res = CLibFunc::Cmd("OPR_CRV_BRIGHTNESS_SET", "254", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("IDC_OPER_BRT_MODE", "On", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// 
-	// res = CLibFunc::Cmd("BRIG_DUTY", "50000", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("BRIG_CURRENT", "100", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("BRIG_POTENTIOMETER", "1", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("BRIG_DAY", "On", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("LCD_PATTERN", "Crosshair", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("LCD_PATTERN_COLOR_1", "W", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("LCD_PATTERN_COLOR_2", "B", addParams, bErrorOccurred, lErrorCode, NULL);
-
-	res = CLibFunc::Cmd("LDR_READ", "123\\123", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("LDR_READ", "123", addParams, bErrorOccurred, lErrorCode, NULL);
 
 
-	res = CLibFunc::Cmd("BUILDER_OPEN", "123\\123", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("BUILDER_OPEN", "123", addParams, bErrorOccurred, lErrorCode, NULL);
 
 	/////////////////////////////////////////////////////////
 	// res = CLibFunc::Cmd("BUILDER_SET_MIN_DUTY_NVG", "0", addParams, bErrorOccurred, lErrorCode, NULL);
 
 	// res = CLibFunc::Cmd("BUILDER_GET_MIN_DUTY_NVG", "", addParams, bErrorOccurred, lErrorCode, NULL);
 
-	// res = CLibFunc::Cmd("BUILDER_SET_MAX_DUTY_NVG", "100", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("BUILDER_SET_MAX_DUTY_NVG", "100", addParams, bErrorOccurred, lErrorCode, NULL);
 
-	// res = CLibFunc::Cmd("BUILDER_GET_MAX_DUTY_NVG", "", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("BUILDER_GET_MAX_DUTY_NVG", "", addParams, bErrorOccurred, lErrorCode, NULL);
 	
 	
 
@@ -196,9 +198,9 @@ BOOL CSTTELibDlg::OnInitDialog()
 	// 
 	// res = CLibFunc::Cmd("BUILDER_GET_MIN_DUTY_DAY", "", addParams, bErrorOccurred, lErrorCode, NULL);
 	// 
-	// res = CLibFunc::Cmd("BUILDER_SET_MAX_DUTY_DAY", "69", addParams, bErrorOccurred, lErrorCode, NULL);
-	// 
-	// res = CLibFunc::Cmd("BUILDER_GET_MAX_DUTY_DAY", "", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("BUILDER_SET_MAX_DUTY_DAY", "69", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("BUILDER_GET_MAX_DUTY_DAY", "", addParams, bErrorOccurred, lErrorCode, NULL);
 	
 	
 
