@@ -2,7 +2,9 @@
 #include "..\stdafx.h"
 #include "stdafx.h"
 #include "CLibClass.h"
+#include <chrono>
 
+using namespace std::chrono;
 
 #undef DEBUG_REMOTE_PROCESS
 
@@ -205,14 +207,17 @@ bool CLibClass::Finish(bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg
 }
 
 
-int  CLibClass::_waitRemoteReply(int timeout_ms)
+int  CLibClass::_waitRemoteReply(unsigned long long timeout_ms)
 {
 	//Blocco fin quando l'operazione non viene eseguita 
 	int nSize = 0;
-	std::clock_t startTime = std::clock();
+	// std::clock_t startTime = std::clock();
+
+	auto start = steady_clock::now();
+	unsigned long long  elapsed;
 
 
-	double x = ::GetTickCount64();
+	// unsigned long long x = ::GetTickCount64();
 
 	std::vector<unsigned char> buf;
 	std::vector<unsigned char> num = { 0 };
@@ -228,8 +233,8 @@ int  CLibClass::_waitRemoteReply(int timeout_ms)
 
 		if (buf.size() > 2)
 		{
-			double elapsed = ((double)::GetTickCount64() - x);
-			TRACE(_T("Reply in %u\n ms"), elapsed);
+			// double elapsed = ((double)::GetTickCount64() - x);
+			// TRACE(_T("Reply in %u\n ms"), elapsed);
 			if ((buf[0] == s_HeadId) && (buf[1] == '0') && (buf[2] == s_CompleteId))
 			{
 				return 0; // Reply FAIL
@@ -267,8 +272,16 @@ int  CLibClass::_waitRemoteReply(int timeout_ms)
 
 		}
 
+		elapsed = duration_cast<milliseconds>(steady_clock::now() - start).count();
+		TRACE(_T("Reply in %u\n ms"), elapsed);
+		// elapsed = ((double)::GetTickCount64() - x);
+		// TRACE(_T("Reply in %u\n ms"), elapsed);
 
-	} while (((double)::GetTickCount64() - x) < (timeout_ms));
+
+	} while (elapsed < (timeout_ms));
+	// while ((elapsed) < (timeout_ms));
+	// while ((duration_cast<milliseconds>(steady_clock::now() - start).count()) < (timeout_ms));
+	// while (((double)::GetTickCount64() - x) < (timeout_ms));
 
 
 	return 0;
@@ -384,7 +397,7 @@ BOOL CLibClass::Cmd(char* pCmd, char* pParams, int& addParams, bool& bErrorOccur
 	//Blocco fin quando l'operazione non viene eseguita //ex 30 min
 	else if (CStringA(pCmd) == "CURRENT_CAL")
 	{
-		int bOK = _waitRemoteReply(30000);
+		int bOK = _waitRemoteReply(3000000000);
 		if (bOK > 1)
 			addParams = bOK;
 
