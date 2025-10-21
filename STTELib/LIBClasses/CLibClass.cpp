@@ -397,7 +397,8 @@ BOOL CLibClass::Cmd(char* pCmd, char* pParams, int& addParams, bool& bErrorOccur
 	//Blocco fin quando l'operazione non viene eseguita //ex 30 min
 	else if (CStringA(pCmd) == "CURRENT_CAL")
 	{
-		int bOK = _waitRemoteReply(3000000000);
+		// Valutare il timer 1090614 (old 3000000000)
+		int bOK = _waitRemoteReply(1500000);
 		if (bOK > 1)
 			addParams = bOK;
 
