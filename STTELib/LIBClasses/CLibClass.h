@@ -18,7 +18,7 @@ public:
 
 
 private:
-	int _waitRemoteReply(int timeout_ms);
+	int _waitRemoteReply(int  timeout_ms);
 	bool _clearRxBuffer();
 
 	class CInternalVars

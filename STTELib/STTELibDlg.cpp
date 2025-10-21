@@ -139,17 +139,19 @@ BOOL CSTTELibDlg::OnInitDialog()
 	// res	= CLibFunc::Start("C:\\Users\\ING_TEST\\Desktop\\BancoOtticoWestar - APP\\1590SWP120 - RemoteProcessSW Banco 2\\REMProcess\\Debug\\SmcMaintTestBench.exe",bErrorOccurred,lErrorCode,0);
 
 	// res = CLibFunc::Start("C:\\Users\\ING_TEST\\Desktop\\DHA5x5\\DHA_16_05_25\\Dha5x5_STTE_r777\\Dha5x5_STTE_Srcs_r777\\Release\\dha5x5_STTE.exe", bErrorOccurred, lErrorCode, 0);
-	res = CLibFunc::Start("C:\\Users\\ING_TEST\\Desktop\\Dha5x5_STTE_r856_mod\\Dha5x5_STTE_Srcs_r856\\Debug\\dha5x5_STTE.exe", bErrorOccurred, lErrorCode, 0);
+	res = CLibFunc::Start("D:\\Dario\\DHA\\Dha5x5_STTE_r857_mod\\Dha5x5_STTE_Srcs_r857\\Release\\dha5x5_STTE.exe", bErrorOccurred, lErrorCode, 0);
 
 
 
 	res = CLibFunc::Cmd("SYS_CONNECT" , "On" , addParams, bErrorOccurred, lErrorCode,NULL);
 
 	res = CLibFunc::Cmd("CONNECT_COM", "On", addParams, bErrorOccurred, lErrorCode, NULL);
+	
+	res = CLibFunc::Cmd("CONNECT_COM", "Off", addParams, bErrorOccurred, lErrorCode, NULL);
 
-	// res = CLibFunc::Cmd("CONNECT_COM", "Off", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("CURRENT_CAL", "calibrazione_corrente", addParams, bErrorOccurred, lErrorCode, NULL);
 
-	res = CLibFunc::Cmd("CMD__REBOOT", "", addParams, bErrorOccurred, lErrorCode, NULL);
+	res = CLibFunc::Cmd("REBOOT", "", addParams, bErrorOccurred, lErrorCode, NULL);
 
 	res = CLibFunc::Cmd("CONNECT_COM", "On", addParams, bErrorOccurred, lErrorCode, NULL);
 
@@ -173,9 +175,9 @@ BOOL CSTTELibDlg::OnInitDialog()
 	res = CLibFunc::Cmd("LCD_PATTERN_COLOR_1", "W", addParams, bErrorOccurred, lErrorCode, NULL);
 	
 	res = CLibFunc::Cmd("LCD_PATTERN_COLOR_2", "B", addParams, bErrorOccurred, lErrorCode, NULL);
-
+	
 	res = CLibFunc::Cmd("CONNECT_COM", "Off", addParams, bErrorOccurred, lErrorCode, NULL);
-
+	
 	res = CLibFunc::Cmd("LDR_READ", "123", addParams, bErrorOccurred, lErrorCode, NULL);
 
 

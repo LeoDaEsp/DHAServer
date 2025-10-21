@@ -1,17 +1,17 @@
 ﻿  stdafx.cpp
   CLibClass.cpp
-C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(40,28): warning C4305: '=': troncamento da '<unnamed-enum-TCP_PORT>' a 'WORD'
-C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(40,20): warning C4309: '=': troncamento di valore costante
-C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(215,11): warning C4244: 'inizializzazione': conversione da 'ULONGLONG' a 'double'. Possibile perdita di dati.
-C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(224,16): warning C4018: '<': errata corrispondenza tra signed e unsigned
-C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(265,12): warning C4244: 'return': conversione da 'float' a 'int'. Possibile perdita di dati.
+D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(40,28): warning C4305: '=': troncamento da '<unnamed-enum-TCP_PORT>' a 'WORD'
+D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(40,20): warning C4309: '=': troncamento di valore costante
+D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(215,11): warning C4244: 'inizializzazione': conversione da 'ULONGLONG' a 'double'. Possibile perdita di dati.
+D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(224,21): warning C4018: '<': errata corrispondenza tra signed e unsigned
+D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\STTELib\LIBClasses\CLibClass.cpp(265,12): warning C4244: 'return': conversione da 'float' a 'int'. Possibile perdita di dati.
   ServerTCPMng.cpp
   Thrd.cpp
   STTELib.cpp
   STTELibDlg.cpp
-     Creazione della libreria C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\Release\STTELib.lib e dell'oggetto C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\Release\STTELib.exp
+     Creazione della libreria D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\Release\STTELib.lib e dell'oggetto D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\Release\STTELib.exp
   Generazione codice in corso...
   Previous IPDB not found, fall back to full compilation.
   All 345 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Generazione codice terminata
-  STTELib.vcxproj -> C:\Users\ING_TEST\Desktop\Dha5x5_STTE_r856_mod\1590SWP110 - Library Banco 2\STTELib\Release\STTELib.exe
+  STTELib.vcxproj -> D:\Dario\DHA\Dha5x5_STTE_r857_mod\1590SWP110 - Library Banco 2\STTELib\Release\STTELib.exe

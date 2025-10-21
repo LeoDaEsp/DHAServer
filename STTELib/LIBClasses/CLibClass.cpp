@@ -10,16 +10,16 @@ CLibClass::CLibClass(void)
 {
 	m_pIntVars = NULL;
 	m_exePath = _T("");
-	m_buf.reserve(RX_BUFFER_SIZ*2);
+	m_buf.reserve(RX_BUFFER_SIZ * 2);
 }
 
 CLibClass::~CLibClass(void)
 {
 }
 
-bool CLibClass::Start(char* pExePath,bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
+bool CLibClass::Start(char* pExePath, bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
 {
-	if(m_pIntVars)
+	if (m_pIntVars)
 		return false;
 
 	m_pIntVars = new CInternalVars();
@@ -61,9 +61,9 @@ bool CLibClass::Start(char* pExePath,bool& bErrorOccurred, long& lErrorCode, cha
 	//CString szMyPath(path);
 	//CString szSlaveSWPath = szMyPath + _T("\\SmcMaintTestBench.exe");
 
-	 
+
 	CString szSlaveSWPath(pExePath);
-	 m_exePath = szSlaveSWPath;
+	m_exePath = szSlaveSWPath;
 	m_pIntVars->m_bSlvProcessActive = FALSE;
 
 #ifndef DEBUG_REMOTE_PROCESS
@@ -137,7 +137,7 @@ bool CLibClass::Start(char* pExePath,bool& bErrorOccurred, long& lErrorCode, cha
 		}
 	}
 #else
-	while(!m_pIntVars->m_TCPServer.IsConnected());
+	while (!m_pIntVars->m_TCPServer.IsConnected());
 #endif
 
 	if (m_pIntVars->m_TCPServer.IsConnected() == FALSE)
@@ -189,9 +189,9 @@ bool CLibClass::Finish(bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg
 
 	//if (m_pIntVars->m_TCPServer.IsConnected())
 	//{
-		m_pIntVars->m_TCPServer.Disconnect();
+	m_pIntVars->m_TCPServer.Disconnect();
 	//}
-	
+
 	m_pIntVars->m_bSlvProcessActive = FALSE;
 	m_pIntVars->m_bInit = FALSE;
 
@@ -215,13 +215,13 @@ int  CLibClass::_waitRemoteReply(int timeout_ms)
 	double x = ::GetTickCount64();
 
 	std::vector<unsigned char> buf;
-	std::vector<unsigned char> num = {0};
+	std::vector<unsigned char> num = { 0 };
 	float data;
 
 	do
 	{
 		m_pIntVars->m_TCPServer.CIRCBUFF_GetData(m_buf);
-		for(int i=0;i<m_buf.size();i++)
+		for (int i = 0; i < m_buf.size(); i++)
 		{
 			buf.push_back(m_buf[i]);
 		}
@@ -248,7 +248,7 @@ int  CLibClass::_waitRemoteReply(int timeout_ms)
 			}
 			if ((buf[0] == s_HeadId) && (buf[9] == s_CompleteId))
 			{
-				
+
 				num[0] = { 0 };
 				num[1] = buf[1];
 				num[2] = buf[2];
@@ -260,14 +260,14 @@ int  CLibClass::_waitRemoteReply(int timeout_ms)
 				num[8] = buf[8];
 
 
-				
+
 				std::memcpy(&data, num.data(), sizeof(data));
 				return data;
 			}
 
 		}
-	
-		
+
+
 	} while (((double)::GetTickCount64() - x) < (timeout_ms));
 
 
@@ -298,7 +298,7 @@ bool CLibClass::_clearRxBuffer()
 
 
 
-BOOL CLibClass::Cmd(char* pCmd, char* pParams,int &addParams, bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
+BOOL CLibClass::Cmd(char* pCmd, char* pParams, int& addParams, bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
 {
 
 	lErrorCode = -1;
@@ -306,13 +306,13 @@ BOOL CLibClass::Cmd(char* pCmd, char* pParams,int &addParams, bool& bErrorOccurr
 	addParams = 0;
 
 
-	if(CStringA(pCmd) == "DEBUG")
+	if (CStringA(pCmd) == "DEBUG")
 	{
 		ASSERT(0);
 		return TRUE;
 	}
 
-	if(CStringA(pCmd) == "DEBUG1")
+	if (CStringA(pCmd) == "DEBUG1")
 	{
 		return TRUE;
 	}
@@ -343,50 +343,61 @@ BOOL CLibClass::Cmd(char* pCmd, char* pParams,int &addParams, bool& bErrorOccurr
 		return FALSE;
 	}
 
-	if(CStringA(pCmd) == "RESIZE_CURVE")
+	if (CStringA(pCmd) == "RESIZE_CURVE")
 	{
 		//ATTENZIONE: problemi nel passaggio dati DLL a TESTSTAND!!!!
 		// da risolvere in futuro..
 		// Per adesso in caso di errore nella procedura blocco tutto..
 
 		int bOK = _waitRemoteReply(20000);
-		return (bOK!=0);
+		return (bOK != 0);
 	}
-	else if(CStringA(pCmd) == "CMD__LDR_WRITE")
+	else if (CStringA(pCmd) == "CMD__LDR_WRITE")
 	{
 		//Sleep(15000);
 		int bOK = _waitRemoteReply(10000);
 		Sleep(300); //Necessrio ad applicare il comando??!!
-		if(bOK > 1)
+		if (bOK > 1)
 			addParams = bOK;
 
-		return (bOK!=0);
+		return (bOK != 0);
 	}
-	else if(CStringA(pCmd) == "CMD__LDR_READ")
+	else if (CStringA(pCmd) == "CMD__LDR_READ")
 	{
 		int bOK = _waitRemoteReply(10000);
 		Sleep(300); //Necessrio ad applicare il comando??!!
-		if(bOK > 1)
+		if (bOK > 1)
 			addParams = bOK;
 
-		return (bOK!=0);
+		return (bOK != 0);
 	}
 	//Blocco fin quando l'operazione non viene eseguita //ex 10 sec
-	else if(CStringA(pCmd) == "FREE_RSC")
+	else if (CStringA(pCmd) == "FREE_RSC")
 	{
 		int bOK = _waitRemoteReply(2000);
-		if(bOK > 1)
+		if (bOK > 1)
 			addParams = bOK;
 
 		return TRUE;
 	}
+	
+	//Blocco fin quando l'operazione non viene eseguita //ex 30 min
+	else if (CStringA(pCmd) == "CURRENT_CAL")
+	{
+		int bOK = _waitRemoteReply(30000);
+		if (bOK > 1)
+			addParams = bOK;
+
+		return TRUE;
+	}
+
 	else
 	{
 		int bOK = _waitRemoteReply(3000);
 
 		addParams = bOK;
 		lErrorCode = (int)bOK;
-		return (bOK!=0);
+		return (bOK != 0);
 	}
 }
 
@@ -449,14 +460,14 @@ BOOL CLibClass::Cmd(char* pCmd, char* pParams,int &addParams, bool& bErrorOccurr
 
 
 static CLibClass g_LIB_Class;
-BOOL CLibFunc::Start(const char* pExePath,bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg) 
+BOOL CLibFunc::Start(const char* pExePath, bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
 {
-	return g_LIB_Class.Start((char*)pExePath,bErrorOccurred, lErrorCode, pchErrorMsg);
+	return g_LIB_Class.Start((char*)pExePath, bErrorOccurred, lErrorCode, pchErrorMsg);
 }
 
-BOOL CLibFunc::Cmd(const char* pCmd, const char* pParams,int &addParams, bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
+BOOL CLibFunc::Cmd(const char* pCmd, const char* pParams, int& addParams, bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
 {
-	return g_LIB_Class.Cmd((char*)pCmd,(char*)pParams,addParams,bErrorOccurred,lErrorCode,pchErrorMsg);
+	return g_LIB_Class.Cmd((char*)pCmd, (char*)pParams, addParams, bErrorOccurred, lErrorCode, pchErrorMsg);
 }
 
 
@@ -469,4 +480,3 @@ BOOL CLibFunc::Finish(bool& bErrorOccurred, long& lErrorCode, char* pchErrorMsg)
 {
 	return g_LIB_Class.Finish(bErrorOccurred, lErrorCode, pchErrorMsg);
 }
-
